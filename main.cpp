@@ -28,7 +28,7 @@ int main()
   cout << "--              Jogo da memória                 --" << endl;
   cout << "--                                              --" << endl;
   cout << "--              Desenvolvido por                --" << endl;
-  cout << "--           Gustavo Baron Lauritzen            --" << endl;
+  cout << "--           Matheus Baron Lauritzen            --" << endl;
   cout << "--                                              --" << endl;
   cout << "--------------------------------------------------" << endl;
 
