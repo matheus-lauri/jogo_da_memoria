@@ -15,7 +15,7 @@ int main()
                          0,0,0,0,
                          0,0,0,0,
                          0,0,0,0};
-    int m_gabarito[4][4], n_jogada, escolha,tipo=0, i, j, pontos = 0;
+    int m_gabarito[4][4], n_jogada, escolha,tipo=0, i, j, pontos = 0, i_coluna = 3, i_linha = 3;
     int linha1, coluna1, linha2, coluna2;
     int carta1, carta2;
 
@@ -43,7 +43,7 @@ int main()
 
   case 1:
     system("CLS");
-    cout << "Seja bem vindo ao Jogo da Memoria, desenvolvido por Elena, Giueseppe, Matheus e Gustavo." << endl;
+    cout << "Seja bem vindo ao Jogo da Memoria, desenvolvido por Matheus Baron Lauritzen." << endl;
     system("pause");
     system("CLS");
     cout << "Então, o jogo funciona da seguinte maneira..." << endl;
@@ -95,41 +95,26 @@ int main()
         break;
         case 2:
             //Matriz invertida por linha
-            for(i = 0;i<4;i++){
-                for(j = 0;j<4;j++){
-                    if(i == 0){
-                    m_gabarito [i][j] = m_principal [i+3][j];
-                    }
-                    if(i == 1){
-                    m_gabarito [i][j] = m_principal [i+1][j];
-                    }
-                    if(i == 2){
-                    m_gabarito [i][j] = m_principal [i-1][j];
-                    }
-                    if(i == 3){
-                    m_gabarito [i][j] = m_principal [i-3][j];
-                    }
+             for(int i = 0; i < 4; i++){
+                for(int j = 0; j < 4; j++){
+                    m_gabarito[i][j] = m_principal[i_linha][j];
+                    cout << m_gabarito[i][j];
                 }
+                i_linha--;
+                cout << "\n";
             }
 
         break;
         case 3:
             //Matriz invertida por coluna
-            for(i = 0;i<4;i++){
-                for(j = 0;j<4;j++){
-                    if(j == 0){
-                    m_gabarito [i][j] = m_principal [i][j+3];
-                    }
-                    if(j == 1){
-                    m_gabarito [i][j] = m_principal [i][j+1];
-                    }
-                    if(j == 2){
-                    m_gabarito [i][j] = m_principal [i][j-1];
-                    }
-                    if(j == 3){
-                    m_gabarito [i][j] = m_principal [i][j-3];
-                    }
+            for(int i = 0; i < 4; i++){
+                for(int j = 0; j < 4; j++){
+                    m_gabarito[i][j] = m_principal[i][i_coluna];
+                    i_coluna--;
+                    cout << m_gabarito[i][j];
                 }
+                i_coluna = 3;
+                cout << "\n";
             }
 
         break;
